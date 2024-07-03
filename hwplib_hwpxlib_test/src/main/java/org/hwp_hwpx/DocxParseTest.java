@@ -26,7 +26,7 @@ import java.util.stream.Collectors;
 public class DocxParseTest {
     public static void main(String[] args) {
         String fileName = "POI_collection_data_description_2.docx";
-        String docxFilePath = "D:\\programming\\github2\\Java-Library-Test\\hwplib_hwpxlib_test\\src\\main\\resources\\sampleDocxFiles\\POI_collection_data_description.docx"; // docx 파일 경로
+        String docxFilePath = "./src/main/resources/sampleDocxFiles/sample2.doc"; // docx 파일 경로
         File file = new File(docxFilePath);
         System.out.println("file: exist:" +file.exists());
         extractTableData(docxFilePath, fileName);
