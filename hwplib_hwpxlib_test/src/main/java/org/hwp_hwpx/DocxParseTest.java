@@ -7,6 +7,7 @@ import org.apache.poi.xwpf.usermodel.XWPFTableRow;
 import org.hwp_hwpx.util.FileUtil;
 import org.hwp_hwpx.util.MakeHtmlUtil;
 import org.hwp_hwpx.vo.TableCellProp;
+import org.hwp_hwpx.vo.TableProp;
 import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTTc;
 import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTTcPr;
 import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTVMerge;
@@ -24,12 +25,13 @@ import java.util.stream.Collectors;
 
 public class DocxParseTest {
     public static void main(String[] args) {
-        String docxFilePath = "D:\\programming\\github2\\Java-Library-Test\\hwplib_hwpxlib_test\\src\\main\\resources\\sampleDocxFiles\\file-sample_1MB.doc"; // docx 파일 경로
+        String fileName = "POI_collection_data_description_2.docx";
+        String docxFilePath = "D:\\programming\\github2\\Java-Library-Test\\hwplib_hwpxlib_test\\src\\main\\resources\\sampleDocxFiles\\POI_collection_data_description.docx"; // docx 파일 경로
         File file = new File(docxFilePath);
         System.out.println("file: exist:" +file.exists());
-        extractTableData(docxFilePath);
+        extractTableData(docxFilePath, fileName);
     }
-    public static void extractTableData(String docxFilePath) {
+    public static void extractTableData(String docxFilePath, String fileName) {
         try {
             FileInputStream fis = new FileInputStream(docxFilePath);
             XWPFDocument document = new XWPFDocument(fis);
@@ -84,11 +86,11 @@ public class DocxParseTest {
                     rowIndex++;
                 }
 
-                String tableString = makeHtmlUtil.makeTable();
+                String tableString = makeHtmlUtil.makeTable(TableProp.builder().border(1).build());
                 System.out.println("table: "+tableString);
                 tableStringList.add(tableString);
             }
-            FileUtil.saveToSampleHwpResults("aaaaaaaa.html", tableStringList.stream().collect(Collectors.joining("")));
+            FileUtil.saveToSampleHwpResults(fileName+".html", tableStringList.stream().collect(Collectors.joining("")));
         } catch (IOException e) {
             e.printStackTrace();
         } catch (Exception e) {
@@ -99,6 +101,7 @@ public class DocxParseTest {
 
     private static int calculateRowSpan(List<XWPFTableRow> rows, int startRow, int cellIndex) {
         int rowSpan = 1;
+        System.out.println();
         for (int i = startRow + 1; i < rows.size(); i++) {
             XWPFTableRow row = rows.get(i);
             XWPFTableCell cell = row.getTableCells().get(cellIndex);
