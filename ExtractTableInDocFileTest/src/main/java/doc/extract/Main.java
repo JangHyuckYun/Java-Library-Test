@@ -12,7 +12,8 @@ public class Main {
             // 실제 추출 로직
             String fileName = "testtest.doc";
             String inputFilePath = "./src/main/resources/sampleDocFiles/"+fileName;
-            List<TableDataVo> list = ExtractDocTable.extract(inputFilePath, true);
+            List<TableDataVo> list = ExtractDocTableUsingSpire.extract(inputFilePath);
+//            List<TableDataVo> list = ExtractDocTable.extract(inputFilePath, true);
 
             // 테이블이 정상적으로 파싱되었나 확인하기 위해 파일에 저장.
             String stringForSaveHtmlFile = list.stream().map(item -> item.getRawContent()).collect(Collectors.joining("</br></br>"));

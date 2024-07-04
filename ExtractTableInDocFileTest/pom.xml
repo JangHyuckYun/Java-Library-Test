@@ -28,6 +28,11 @@
             <name>Aspose Java API</name>
             <url>https://releases.aspose.com/java/repo/</url>
         </repository>
+        <repository>
+            <id>com.e-iceblue</id>
+            <name>e-iceblue</name>
+            <url>https://repo.e-iceblue.com/nexus/content/groups/public/</url>
+        </repository>
     </repositories>
     
     <dependencies>
@@ -63,7 +68,14 @@
             <artifactId>docx4j</artifactId>
             <version>6.1.2</version>
         </dependency>
-        
+
+        <dependency>
+            <groupId>e-iceblue</groupId>
+            <artifactId>spire.doc</artifactId>
+            <version>12.5.1</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>

@@ -9,6 +9,8 @@ DOC 파일의 데이터 중 테이블만 추출하여 저장하는 로직이 필
   "isMerged"라고 병합되었는지 판별하는 메서드가 있는데, 병합을 했음에도 전부 false가 나와버려, 일단 보류 상태이다.  
     
   (일단 GPT가 데이터를 인식하는데는 문제가 없을거라 보고 넘기고, 나중에 문제에 대한 원인을 찾아야할 것 같다. (DOCX 파일에서는 인식이 잘 되었었음.))
+- (240704) Spire.DOC 라이브러리로 추가 테스트를 진행 하였지만 여전히 rowSpan, colSpan 값을 불러오지 못함.  
+  (해당 사이트 참조하여 만들었음. https://www.e-iceblue.com/Tutorials/Java/Spire.Doc-for-Java/Program-Guide/Table/Java-merge-and-split-table-cells-on-Word-document.html )
 
 ## Sample 데이터 출처
 - https://sample-videos.com/download-sample-doc-file.php

@@ -43,7 +43,6 @@ public class ExtractDocTable {
             return null;
         }
     }
-
     private static void refineTableToHtml(Table table, MakeHtmlUtil makeHtmlUtil) {
         int numRows = table.numRows();
         for (int rowIndex = 0; rowIndex < numRows; rowIndex++) {
