@@ -34,7 +34,7 @@ public class LibreOfficeConverter {
 
             List oooOptions = new ArrayList();
             oooOptions.add("--nofirststartwizard");
-            oooOptions.add("--infilter=\"Hwp2002_File\"");
+//            oooOptions.add("--infilter=\"Hwp2002_File\"");
 
             OOoServer oOoServer = new OOoServer(officePath);
             BootstrapSocketConnector bootstrapSocketConnector = new ooo.connector.BootstrapSocketConnector(oOoServer);

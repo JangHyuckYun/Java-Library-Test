@@ -40,7 +40,8 @@ public class ExtractDocTableUsingSpire {
                         String content = getCellText(tableCell.getParagraphs());
                         TableCellProp cellProp = TableCellProp.builder().colSpan(colSpan).rowSpan(rowSpan).content(content).build();
                         makeHtmlUtil.addRow(cellProp);
-                        System.out.println("cellProp: "+ cellProp.toString());
+                        System.out.print("cellProp: "+ cellProp.toString());
+                        System.out.println(" / width:" +tableCell.getCellWidth());
                     }
                     makeHtmlUtil.submitRow();
                 }

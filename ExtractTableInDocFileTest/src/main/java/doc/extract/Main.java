@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
         try {
             // 실제 추출 로직
-            String fileName = "testtest.doc";
+            String fileName = "sample2.doc";
             String inputFilePath = "./src/main/resources/sampleDocFiles/"+fileName;
             List<TableDataVo> list = ExtractDocTableUsingSpire.extract(inputFilePath);
 //            List<TableDataVo> list = ExtractDocTable.extract(inputFilePath, true);

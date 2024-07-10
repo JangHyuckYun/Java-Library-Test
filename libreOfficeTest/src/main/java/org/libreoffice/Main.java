@@ -2,6 +2,8 @@ package org.libreoffice;
 
 import java.io.File;
 import java.nio.file.Paths;
+import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
 
 public class Main {
@@ -10,7 +12,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         
-        System.out.println("hwpx 파일이 있는 폴더 경로를 적어 주세요. ( default path: /home/alvisapi/sampleHwpxFiles/");
+        System.out.println("hwp/hwpx/doc/docx 파일이 있는 폴더 경로를 적어 주세요. ( default path: /home/alvisapi/sampleHwpxFiles/");
         String contextPath = sc.nextLine().trim();
         if(contextPath.isEmpty()) {
             contextPath = "/home/alvisapi/sampleHwpxFiles/";
@@ -38,7 +40,13 @@ public class Main {
         System.out.println("filename: "+filename);
         System.out.println("inputFilePath: "+inputFilePath);
         System.out.println("outputFilePath: "+outputFilePath);
+        LocalTime currentTime = LocalTime.now();
         libreOfficeConverter.convertToPdf(inputFilePath, outputFilePath);
+        LocalTime otherTime = LocalTime.now();
+        long hoursBetween = ChronoUnit.HOURS.between(currentTime, otherTime);
+        long minutesBetween = ChronoUnit.MINUTES.between(currentTime, otherTime)%60;
+        long secondsBetween = ChronoUnit.SECONDS.between(currentTime, otherTime)%60%60;
+        System.out.printf("변환까지 걸린시간: %d시간 %d분 %d초", hoursBetween, minutesBetween, secondsBetween);
         System.exit(0);
     }
 }

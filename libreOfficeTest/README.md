@@ -105,3 +105,16 @@ java -jar /home/alvisapi/LibreOfficeTest/libreOfficeTest.jar
 ![input_3](./images/input_3.png)
 
 ![input_4](./images/input_4.png)
+
+---
+## Windows 환경에서 LibreOffice 설치 및 HWP/HWPX 확장 프로그램 설치 가이드
+
+### 1. https://www.libreoffice.org/download/download-libreoffice/ 접속하여 exe 파일 및 한글팩 다운로드.
+> ※ D 드라이브가 아닌 다른 드라이브에 설치하는 경우, 
+
+![libreOffice_install_desc_1](./images/libreOffice_install_desc_1.png)
+
+### 2. HWP/HWPX 파일 인식하기 위한 확장 프로그램 설치.
+상단의 "LibreOffice에서 HWP/HWPX파일 인식하기 위한 확장 프로그램 설치" 부분 참고하여 페이지 접속 후 설치까지만 진행.
+
+### 3. 
